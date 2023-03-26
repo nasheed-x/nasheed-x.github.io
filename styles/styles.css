@@ -247,13 +247,6 @@ a:active {
   }
 }
 
-/* Responsive Image Gallery */
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
 ul {
   list-style: none;
 }
@@ -262,6 +255,8 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .image-gallery > li {
