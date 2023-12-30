@@ -1,0 +1,128 @@
+---
+layout: default
+body_classes: page-project
+---
+
+{% assign limit = page.gallery_limit | default: 6 %}
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-6 mb-4">
+
+        {% if page.title %}
+          <div class="project-heading">
+            <h1>{{ page.title }}</h1>
+          </div>
+        {% endif %}
+
+        {% if page.categories %}
+          <div class="project-categories">
+          {% include framework/blocks/components/categories-badges.html 
+              categories=page.categories
+          %}
+          </div>
+        {% endif %}
+        
+        <!-- {% if page.date %}
+          <div class="project-date">
+            <strong>Date </strong><span>{{ page.date | date_to_long_string }}</span>
+          </div>
+        {% endif %} -->
+
+        {% if page.years %}
+        <div class="project-location">
+          <strong>Years </strong><span>{{ page.years }}</span>
+        </div>
+      {% endif %}
+
+        {% if page.locations %}
+          <div class="project-location">
+            <strong>Locations </strong><span>{{ page.locations }}</span>
+          </div>
+        {% endif %}
+
+        {% if page.partners %}
+          <div class="project-partner">
+            <strong>Partners </strong><span>{{ page.partners }}</span>
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <div class="content">{{ page.blurb }}</div>
+      </div>
+
+    </div>
+
+
+    <div class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            {% include framework/blocks/sections/heading.html
+              image=page.image
+              align="center"
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section pt-0">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            
+            {% if page.authors %}
+              <div class="mb-2">
+              {% for author in page.authors %}
+                {% include framework/blocks/components/author.html 
+                author=author
+                style='row'
+                show_author_name=true
+              %}
+              {% endfor %}
+              </div>
+            {% endif %}
+            
+            <div class="content">{{ content }}</div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <div class="gallery gallery-masonry">
+          {% for item in page.gallery limit: limit %}
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="{{ item.image | relative_url }}"/></div>
+              {% if item.caption %}
+              <div class="gallery-caption">{{ item.caption }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+  var grid = document.querySelector('.gallery');
+  var msnry;
+
+  imagesLoaded( grid, function() {
+    msnry = new Masonry( grid, {
+      itemSelector: '.gallery-item',
+      percentPosition: true,
+    });
+  });
+</script>

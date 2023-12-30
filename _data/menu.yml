@@ -1,0 +1,73 @@
+main:
+  - name: home
+    url: /
+    weight: 1
+  - name: about me
+    url: /about-me/
+    weight: 2
+  - name: projects
+    url: /projects/
+    weight: 3
+    # child:
+    #   - name: "Project Layout 1"
+    #     icon: "/assets/images/icons/wireframe-7.svg"
+    #     icon_darkmode: "/assets/images/icons/wireframe-7-white.svg"
+    #     description: "Default Project layout"
+    #     url: /projects/project-1/
+    #   - name: "Project Layout 2"
+    #     icon: "/assets/images/icons/wireframe-5.svg"
+    #     icon_darkmode: "/assets/images/icons/wireframe-5-white.svg"
+    #     description: "Right side layout"
+    #     url: /projects/project-2/
+    #   - name: "Project Layout 3"
+    #     icon: "/assets/images/icons/wireframe-6.svg"
+    #     icon_darkmode: "/assets/images/icons/wireframe-6-white.svg"
+    #     description: "Left side layout"
+    #     url: /projects/project-3/
+    #   - name: "Project Layout 4"
+    #     icon: "/assets/images/icons/wireframe-8.svg"
+    #     icon_darkmode: "/assets/images/icons/wireframe-8-white.svg"
+    #     description: "Top layout"
+    #     url: /projects/project-4/
+  - name: blog
+    url: /blog/
+    weight: 4
+  
+
+footer_primary:
+  - name: "home"
+    url: /
+  - name: "about me"
+    url: /about-me/
+  - name: "projects"
+    url: /projects/
+  - name: "blog"
+    url: /blog/
+
+
+footer_secondary:
+  - name: nyuad.space
+    url: https://nyuad-space.github.io/
+    weight: 1
+  - name: dharavi.org
+    url: https://dharavi.nyuad.io/
+    weight: 2
+  - name: nyuad.io
+    url: https://nyuad.io/en
+    weight: 3
+
+footer_tertiary:
+  - name: Privacy Policy
+    url: /privacy-policy/
+    weight: 1
+  - name: Terms and Conditions
+    url: /terms-and-conditions/
+    weight: 2
+
+bottom:
+  - name:
+    url:
+    weight: 3
+  - name:
+    url:
+    weight: 4
