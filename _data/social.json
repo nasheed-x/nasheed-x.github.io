@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Linkedin",
+    "fa_icon": "fab fa-linkedin",
+    "url": "https://www.linkedin.com/in/nasheed-x/"
+  },
+  {
+    "title": "Mail",
+    "fa_icon": "fas fa-envelope",
+    "url": "mailto:nasheed@nyu.edu"
+  },
+  {
+    "title": "Github",
+    "fa_icon": "fab fa-github",
+    "url": "https://github.com/nasheed-x"
+  },
+  {
+    "title": "Discord",
+    "fa_icon": "fab fa-discord",
+    "url": "https://discordapp.com/users/727237691967668425"
+  },
+  {
+    "title": "Instagram",
+    "fa_icon": "fab fa-instagram-square",
+    "url": "https://www.instagram.com/nasheed.x"
+  },
+  {
+    "title": "Twitter",
+    "fa_icon": "fab fa-twitter",
+    "url": "https://twitter.com/nasheed_x"
+  }
+]
