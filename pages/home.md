@@ -1,7 +1,7 @@
 ---
 layout: home-page
 permalink: "/"
-title: 
+title: ""
 description: 
 meta_description: "my name’s nasheed. i’m a junior studying electrical engineering & computer science at nyu’s tandon school of engineering.this website should help illustrate some of my past and current works."
 meta_title: nasheed.io
