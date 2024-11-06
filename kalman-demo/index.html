@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Simulation - Kalman Filter Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Rocket Trajectory Simulation</h1>
+            <div class="simulation-info">
+                <span id="flightTime">Time: 0.00s</span>
+                <span id="altitude">Alt: 0.00m</span>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <main class="main-content">
+                <div class="simulation-view">
+                    <canvas id="gameCanvas"></canvas>
+                </div>
+                
+                <div class="data-visualization">
+                    <div class="graph-container">
+                        <canvas id="dataChart"></canvas>
+                    </div>
+                    <div class="data-metrics">
+                        <div class="metric-card">
+                            <h3>Velocity</h3>
+                            <span id="velocity">0.00 px/s</span>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Acceleration</h3>
+                            <span id="acceleration">0.00 px/s²</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="control-panel">
+                <div class="control-section">
+                    <h2>Flight Controls</h2>
+                    <div class="control-group">
+                        <label for="launchAngle">Launch Angle (°)</label>
+                        <div class="slider-container">
+                            <input type="range" id="launchAngle" min="0" max="90" value="45">
+                            <output id="launchAngleValue">45</output>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="initialSpeed">Initial Speed (px/s)</label>
+                        <div class="slider-container">
+                            <input type="range" id="initialSpeed" min="10" max="150" value="50">
+                            <output id="initialSpeedValue">50</output>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="processNoise">Process Noise (Q)</label>
+                        <div class="slider-container">
+                            <input type="range" id="processNoise" min="0" max="1" step="0.01" value="0.1">
+                            <output id="processNoiseValue">0.10</output>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="measurementNoise">Measurement Noise (R)</label>
+                        <div class="slider-container">
+                            <input type="range" id="measurementNoise" min="0" max="50" step="0.5" value="5">
+                            <output id="measurementNoiseValue">5.0</output>
+                        </div>
+                    </div>
+
+                    <div class="toggle-controls">
+                        <div class="toggle-group">
+                            <label for="windToggle">Wind Effects</label>
+                            <label class="switch">
+                                <input type="checkbox" id="windToggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="toggle-group">
+                            <label for="keepTrajectories">Keep Trajectories</label>
+                            <label class="switch">
+                                <input type="checkbox" id="keepTrajectories">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="launchButton" class="launch-btn">Launch Rocket</button>
+                        <button id="clearButton" class="clear-btn">Clear Trajectories</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
